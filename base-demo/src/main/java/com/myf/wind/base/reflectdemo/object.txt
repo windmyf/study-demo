@@ -1,0 +1,3 @@
+drum=com.myf.wind.base.factorydemo.service.impl.DrumServiceImpl
+guitar=com.myf.wind.base.factorydemo.service.impl.GuitarServiceImpl
+horn=com.myf.wind.base.factorydemo.service.impl.HornServiceImpl

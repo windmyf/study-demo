@@ -4,7 +4,7 @@ import com.myf.wind.base.factorydemo.enums.InstrumentTypeEnum;
 import com.myf.wind.base.factorydemo.factory.InstrumentFactory;
 import com.myf.wind.base.factorydemo.factory.InstrumentFactoryNew;
 import com.myf.wind.base.factorydemo.service.InstrumentService;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
 
