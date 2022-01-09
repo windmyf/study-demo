@@ -40,8 +40,10 @@ public class ReceiverQueue {
 
         // 获取destination,user?consumer.exclusive=true设置一个消费者消费（独占式消费），避免数据分布到不同的节点
         Queue destination = session.createQueue("user");
+        // 可多条件
+        String selector = "age=18 and group=1";
         // 向目的地写入消息,分组消费(并发场景下提高并发量，负载均衡概念)
-        MessageConsumer consumer = session.createConsumer(destination,"group=3");
+        MessageConsumer consumer = session.createConsumer(destination,selector);
         // 获取消息
         consumer.setMessageListener(new MyListener());
 

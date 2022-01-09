@@ -3,6 +3,7 @@ package com.myf.wind.queue;
 import com.myf.wind.config.MyConfig;
 import com.myf.wind.pojo.Person;
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.activemq.ScheduledMessage;
 
 import javax.jms.*;
 
@@ -34,15 +35,26 @@ public class SenderQueue {
         producer.send(bytesMessage);
 
         // map类型
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             MapMessage mapMessage = session.createMapMessage();
             mapMessage.setString("name","feifei-" + i);
-            mapMessage.setInt("age",25);
+            mapMessage.setStringProperty("name","feifei-" + i);
+            mapMessage.setInt("age",25-i);
+            mapMessage.setIntProperty("age",25-i);
             mapMessage.setString("gender","女");
+            mapMessage.setStringProperty("gender","女");
             // 设置分组，定向分发
-            mapMessage.setLongProperty("group",i%7);
+            mapMessage.setLongProperty("group",1);
+            // 配置文件中需开启 schedulerSupport="true"
+//            long delay = 6*1000;
+//            int repeat = 2;
+//            long period = 2*1000;
+//            mapMessage.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_DELAY,delay);
+//            // 重复需要设置为int类型
+//            mapMessage.setIntProperty(ScheduledMessage.AMQ_SCHEDULED_REPEAT,repeat);
+//            mapMessage.setLongProperty(ScheduledMessage.AMQ_SCHEDULED_PERIOD,period);
             // 超时后进入死信队列
-            producer.setTimeToLive(1000);
+            producer.setTimeToLive(10000);
             producer.send(mapMessage);
         }
 
