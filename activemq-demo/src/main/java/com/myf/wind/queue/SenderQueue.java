@@ -2,8 +2,6 @@ package com.myf.wind.queue;
 
 import com.myf.wind.config.MyConfig;
 import com.myf.wind.pojo.Person;
-import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.activemq.ScheduledMessage;
 
 import javax.jms.*;
 
@@ -63,12 +61,6 @@ public class SenderQueue {
         connection.close();
 
     }
-
-
-
-
-
-
 
 
 }

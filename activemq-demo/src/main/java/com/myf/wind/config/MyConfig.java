@@ -16,7 +16,7 @@ public class MyConfig {
     public static Connection getActiveMQConnection() throws JMSException {
         ActiveMQConnectionFactory connectionFactory = new ActiveMQConnectionFactory(
                 "admin", "windmyf123",
-                "tcp://localhost:61616"
+                "tcp://47.96.167.160:61616"
         );
         // 添加信任的持久化类型
         ArrayList<String> trustedPackages = new ArrayList<>();
