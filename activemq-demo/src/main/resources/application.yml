@@ -1,8 +1,8 @@
 spring:
   activemq:
-    broker-url: tcp://47.96.167.160:61616
+    broker-url: tcp://localhost:61616
     user: admin
-    password: windmyf123
+    password: windmyf
   jms:
     pub-sub-domain: true
 logging:
