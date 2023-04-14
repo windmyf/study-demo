@@ -59,6 +59,7 @@
         <module>cloud-nacos-9002</module>
         <module>cloud-nacos-consumer-8003</module>
         <module>cloud-nacos-config-3377</module>
+        <module>cloud-sentinel-service-9110</module>
     </modules>
     <build>
         <plugins>
